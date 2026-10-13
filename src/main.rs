@@ -1,15 +1,24 @@
 use std::io;
 
 fn main() {
-    println!("Rate die Zahl!");
+    loop {
+        println!("Zufallszahlengenerator");
+    
+        let mut start: String = String::new();
+        let mut end: String = String::new();
 
-    println!("Bitte gib deine Schätzung ein.");
+        io::stdin()
+            .read_line(&mut start)
+            .expect("Fehler beim Lesen der Zeile");
 
-    let mut guess = String::new();
+        io::stdin()
+            .read_line(&mut end)
+            .expect("Fehler beim Lesen der Zeile");
+        
+        let start: i16 = start.trim().parse().unwrap();
+        let end: i16 = end.trim().parse().unwrap();
+        let random_number: i16 = rand::random_range(start..=end);
 
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("Fehler beim Lesen der Zeile");
-
-    println!("Du hast geschätzt: {guess}");
+        println!("{}", random_number);
+    }
 }
