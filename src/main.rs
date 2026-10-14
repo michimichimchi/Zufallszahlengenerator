@@ -1,3 +1,4 @@
+#![windows_subsystem = "windows"]
 use eframe::egui;
 mod rng;
 
@@ -34,7 +35,7 @@ impl Default for MyApp {
 impl eframe::App for MyApp {
     fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         egui::CentralPanel::default().show(ctx, |ui| {
-            ui.heading("geben Sie ein, zwischen welchen beiden Zahlen eine Zahl gefunden werden soll:");
+            ui.heading("Zahlenbereich auswählen: ");
 
             ui.separator();
 
@@ -68,7 +69,7 @@ impl eframe::App for MyApp {
 
             ui.add(
                 egui::Image::new(egui::include_image!("../29300_de_387px.jpg"))
-                    .max_size(egui::vec2(180.0, 180.0))
+                    .max_size(egui::vec2(220.0, 220.0))
             );
         });
     }
