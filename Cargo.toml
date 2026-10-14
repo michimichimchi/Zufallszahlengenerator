@@ -7,3 +7,5 @@ edition = "2024"
 rand = "0.10.3"
 eframe = "0.33.3"
 egui = "0.33.3"
+egui_extras = { version = "0.33.3", features = ["image"] }
+image = { version = "0.25.6", default-features = false, features = ["jpeg"] }
